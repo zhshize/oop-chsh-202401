@@ -1,7 +1,5 @@
 <?php
 
-use LDAP\Result;
-
 class AlwaysSortedArray {
     protected array $list;
 
@@ -28,23 +26,7 @@ class AlwaysSortedArray {
     }
 }
 
-class ReversedAlwaysSortedArray extends AlwaysSortedArray {
-    public function reversedGet(int $index): int {
-        return $this->list[count($this->list) - $index - 1];
-    }
-
-    public function reversedAll(): array {
-        return array_reverse($this->list);
-    }
-
-    public function put(int $n): void
-    {
-        echo "$n was put in the list<br>";
-        parent::put($n);
-    }
-}
-
-$a = new ReversedAlwaysSortedArray();
+$a = new AlwaysSortedArray();
 $values = [3291, 992, -38109, 33, 19493];
 
 foreach ($values as $v) {
@@ -52,6 +34,3 @@ foreach ($values as $v) {
 }
 
 print_r($a->all());
-
-// print_r($a->reversedAll());
-//echo $a->reversedGet(0);
