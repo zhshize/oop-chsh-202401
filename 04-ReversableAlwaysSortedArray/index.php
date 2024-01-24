@@ -1,6 +1,6 @@
 <?php
 class AlwaysSortedArray {
-    private array $list;
+    protected array $list;
 
     public function __construct() {
         $this->list = [];
@@ -49,3 +49,4 @@ foreach ($values as $v) {
 }
 
 print_r($a->all());
+print_r($a->reversedAll());
